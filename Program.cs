@@ -6,8 +6,6 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.Azure.KeyVault;
-//using Microsoft.Azure.KeyVault;
-
 
 [assembly: UserSecretsId("dnc-azure-storage")]
 
@@ -43,6 +41,7 @@ namespace ConsoleApplication
             });
 
             var storageConnection = keyVault.GetSecretAsync(settings.StorageConnectionVaultUrl).Result.Value;
+
 
             CloudStorageAccount csa = CloudStorageAccount.Parse(storageConnection);
 
